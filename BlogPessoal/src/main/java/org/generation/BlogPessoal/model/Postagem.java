@@ -1,7 +1,6 @@
 package org.generation.BlogPessoal.model;
 
 import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,7 +24,7 @@ public class Postagem {
 	private String titulo;
 	
 	@NotNull
-	@Size(min = 10, max = 500)
+	@Size(min = 5, max = 500)
 	private String texto;
 	
 	@Temporal(TemporalType.TIMESTAMP)
