@@ -30,14 +30,14 @@ public class UsuarioService {
 	public Optional<UsuarioLogin> logarUsuario(Optional<UsuarioLogin> user) {
 
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<Usuario> usuario = repository.findByUsername(user.get().getUsuario());
+		Optional<Usuario> usuario = repository.findByUsername(user.get().getUsername());
 
 		if (usuario.isPresent()) {
 			if (encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
 
 				/* O cliente envia uma reqquisição HTTP com o Authorization Headers: Basic {credenciais em base 64 no formato 
 				usuário:senha}*/
-				String credencial = user.get().getUsuario() + ":" + user.get().getSenha(); //credencial no formato usuário:senha
+				String credencial = user.get().getUsername() + ":" + user.get().getSenha(); //credencial no formato usuário:senha
 				//codificando a credencial para Base64
 				byte[] autorizacaoBase64 = Base64.encodeBase64(credencial.getBytes(Charset.forName("US-ASCII"))); 
 				//criando o Authorization Headers que vai ser mandado nas requisições do cliente
