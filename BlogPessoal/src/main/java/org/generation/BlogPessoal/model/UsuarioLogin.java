@@ -4,7 +4,7 @@ public class UsuarioLogin {
 	
 	private String nome;
 	
-	private String usuario;
+	private String username;
 	
 	private String senha;
 	
@@ -19,11 +19,11 @@ public class UsuarioLogin {
 	}
 
 	public String getUsuario() {
-		return usuario;
+		return username;
 	}
 
 	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+		this.username = usuario;
 	}
 
 	public String getSenha() {
