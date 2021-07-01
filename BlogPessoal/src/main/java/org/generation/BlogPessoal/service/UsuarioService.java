@@ -44,12 +44,17 @@ public class UsuarioService {
 				String autorizacaoHeader = "Basic " + new String(autorizacaoBase64); 
 
 				user.get().setToken(autorizacaoHeader);				
-				user.get().setSenha(usuario.get().getSenha());
+				user.get().setId(usuario.get().getId());
+				user.get().setNome(usuario.get().getNome());
+				user.get().setUsername(usuario.get().getUsername());
+				user.get().setFoto(usuario.get().getFoto());
+				user.get().setTipoUsuario(usuario.get().getTipoUsuario());
 
 				return user;
 
 			}
 		}
+		
 		return null;
 	}
 
